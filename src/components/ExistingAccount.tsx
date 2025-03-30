@@ -141,7 +141,7 @@ export default function OldAccount() {
                 className="mt-2"
               />
               {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
-              <Button onClick={handleValidateAccount} className="mt-2 w-full bg-[#B89B45]">
+              <Button onClick={handleValidateAccount} className="mt-6 w-full h-12 bg-[#B89B45]">
                 Validate Account
               </Button>
               {isOtpSent && (
@@ -171,7 +171,7 @@ export default function OldAccount() {
           )}
             {step === 2 && (
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold">Step 2: Company Information</h2>
+              <h2 className="text-xl font-semibold">Company Information :</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col">
                   <label className="text-sm font-medium">Company Name</label>
