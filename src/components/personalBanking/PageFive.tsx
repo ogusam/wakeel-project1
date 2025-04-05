@@ -3,6 +3,12 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 
+interface StepProps {
+  formData: Record<string, any>;
+  
+  handleCheckboxChange?: (checked: boolean) => void;
+  errors?: Record<string, string>;
+}
 
 function PageFive({ formData, handleCheckboxChange, errors }: StepProps) {
     const termsText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
