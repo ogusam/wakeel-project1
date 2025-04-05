@@ -21,8 +21,8 @@ import { useState } from "react";
         </div>
        ) : (
         <>
-            <Button className="w-full bg-[#B89B45] hover:bg-[#ffff] hover:text-black" variant="default">Personal Banking</Button>
-            <Button className="w-full hover:bg-[#B89B45]"  variant="outline"><Link to='newAccount'>Corporate Banking</Link></Button>
+            <Button className="w-full bg-[#B89B45] hover:bg-[#ffff] hover:text-black" variant="default"><Link to='/personalBanking'>Personal Banking</Link></Button>
+            <Button className="w-full hover:bg-[#B89B45]"  variant="outline"><Link to='/cbanking'>Corporate Banking</Link></Button>
           </>
        )
         }

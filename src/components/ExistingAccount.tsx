@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import pos from '../assets/pos.png'
+import altpay from '../assets/altpay.jpeg'
 import { cn } from "@/lib/utils";
 import {
     Dialog,
@@ -19,6 +21,7 @@ import {
 export default function OldAccount() {
     const [step, setStep] = useState<number>(1);
     const [account, setAccount] = useState<string>("2020519785");
+    const [accountName, setAccountName] = useState<string>("");
     const [otp, setOtp] = useState<string>("");
     const [isOtpSent, setIsOtpSent] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -37,7 +40,7 @@ export default function OldAccount() {
 
     const fetchMaskedEmail = async () => {
         try {
-          const response = await fetch("https://run.mocky.io/v3/724dcf78-5e6d-4916-8e85-1dc60bd363ff");
+          const response = await fetch("api to fetch masked email");
           const data = await response.json();
           setMaskedEmail(data.maskedEmail);
         } catch (error) {
@@ -47,6 +50,7 @@ export default function OldAccount() {
 
     const handleValidateAccount = async() => {
         if (account.trim() === "2020519785") {
+            setAccountName("Sam Ogu");
             await fetchMaskedEmail();
             setIsOtpSent(true);
             setErrorMessage("");
@@ -121,7 +125,15 @@ export default function OldAccount() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div
+  
+    >
+
+    <div className="flex flex-col items-center justify-center min-h-screen p-4    bg-cover h-screen"
+ style={{
+                backgroundImage: `url(${pos})`
+            }}>
+      <div className="w-60 mb-2"><img src={altpay} alt=""/></div>
       <Card className="w-full max-w-150 p-4">
         <CardContent className="space-y-4">
           
@@ -144,8 +156,10 @@ export default function OldAccount() {
               <Button onClick={handleValidateAccount} className="mt-6 w-full h-12 bg-[#B89B45]">
                 Validate Account
               </Button>
+              
               {isOtpSent && (
                 <div className="mt-4">
+                    {accountName && <p className="text-green-500">Account Name: {accountName}</p>}
                   <Input
                     placeholder="Enter OTP"
                     value={otp}
@@ -213,7 +227,7 @@ export default function OldAccount() {
 
 {step === 3 && (
             <div>
-              <h2 className="text-xl font-semibold">Step 3: Terms and Conditions</h2>
+              <h2 className="text-xl font-semibold">Terms and Conditions</h2>
               <p className="text-sm text-gray-600">Please read and accept the terms and conditions before proceeding.</p>
               <Dialog>
                 <DialogTrigger asChild>
@@ -253,6 +267,7 @@ export default function OldAccount() {
           )}
         </CardContent>
       </Card>
+    </div>
     </div>
   );
 }

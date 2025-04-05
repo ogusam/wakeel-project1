@@ -1,0 +1,63 @@
+{
+    "registrations": [
+      {
+        "id": 1,
+        "tin": "1234567890",
+        "businessName": "Acme Corporation",
+        "businessAddress": "123 Business St, Lagos",
+        "phoneNumber": "+2348000000000",
+        "businessEmail": "info@acme.com",
+        "cacNumber": "CAC123456",
+        "lga": "Ikeja",
+        "state": "Lagos",
+        "signatoryName": "John Doe",
+        "dateOfBirth": "1990-01-01",
+        "gender": "Male",
+        "bvn": "12345678901",
+        "nin": "12345678901",
+        "address": "45 Signatory Ave, Abuja",
+        "passportPhoto": "passport.jpg",
+        "signatoryPhone": "+2348123456789",
+        "signatoryLga": "Municipal",
+        "signatoryState": "FCT",
+        "cacDocument": "cac-doc.pdf",
+        "otherDocuments": [
+          "doc1.pdf",
+          "doc2.pdf",
+          "doc3.pdf",
+          "doc4.pdf",
+          "doc5.pdf",
+          "doc6.pdf",
+          "doc7.pdf"
+        ],
+        "termsAccepted": true,
+        "otp": "123456",
+        "otpVerified": true,
+        "submittedAt": "2025-04-04T12:34:56Z"
+      }
+    ],
+        "requestotp":{
+            "otp":"77777777"
+        },
+        "step1": {
+          "accountNumber": "2020519785",
+          "accountName": "John Doe",
+          "otp": "123456",
+          "maskedEmail": "jo***@gmail.com"
+        },
+        "step2": {
+          "companyName": "TechNova Solutions",
+          "companyAddress": "42 Silicon Street, Innovation City",
+          "phoneNumber": "+2348012345678",
+          "email": "contact@technova.com",
+          "lga": "Ikeja",
+          "state": "Lagos"
+        },
+        "step3": {
+          "termsAccepted": true
+        }
+      
+      
+  }
+  
+  
