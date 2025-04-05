@@ -2,7 +2,12 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-
+interface StepProps {
+  formData: Record<string, any>;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  
+  
+}
 
 function PageFour({ handleChange }: StepProps) {
     const documents = ["cacDocument", "document1", "document2", "document3", "document4", "document5", "document6", "document7"];
