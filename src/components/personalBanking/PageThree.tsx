@@ -2,8 +2,12 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-
-
+interface StepProps {
+  formData: Record<string, any>;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleCheckboxChange?: (checked: boolean) => void;
+  errors?: Record<string, string>;
+}
  const PageThree = ({ formData, handleChange, errors }: StepProps)=>
      {
         return (

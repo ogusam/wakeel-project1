@@ -24,7 +24,7 @@ const PersonalBanking = () =>
           });
           const [errors, setErrors] = useState<Record<string, string>>({});
           const [otp, setOtp] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
+  
   const [otpError, setOtpError] = useState("");
   const [resending, setResending] = useState(false);
 
