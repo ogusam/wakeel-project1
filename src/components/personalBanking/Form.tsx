@@ -184,7 +184,7 @@ const PersonalBanking = () =>
             case 2:
               return <PageThree formData={formData} handleChange={handleChange} errors={errors}/>;
             case 3:
-              return <PageFour StepFour formData={formData} handleChange={handleChange}/>;
+              return <PageFour formData={formData} handleChange={handleChange}/>;
             case 4:
              return <PageFive formData={formData} handleCheckboxChange={handleCheckboxChange} errors={errors} />;
             default:
