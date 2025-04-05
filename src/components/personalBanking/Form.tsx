@@ -92,7 +92,7 @@ const PersonalBanking = () =>
               });
               if (!res.ok) throw new Error("Failed to send OTP");
               toast.success(`OTP has been sent to your email: ${formData.businessEmail}`);
-              setOtpSent(true);
+              
               setShowOtpDialog(true);
             } catch (err) {
               alert("Error sending OTP");
