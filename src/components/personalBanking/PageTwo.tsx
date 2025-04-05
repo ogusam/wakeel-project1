@@ -2,6 +2,13 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+interface StepProps {
+  formData: Record<string, any>;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+  errors?: Record<string, string>;
+}
+
 const PageTwo = ({ formData, handleChange, errors }: StepProps) => {
     return (
 
