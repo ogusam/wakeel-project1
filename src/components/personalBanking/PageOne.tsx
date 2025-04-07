@@ -2,6 +2,7 @@ import { Label } from "@/components/ui/label";
 
 
 function Tin({ formData, handleChange }: { formData: any; handleChange: any }) {
+  
     return (
         <div>
         <Label htmlFor="Tin">Tin Number</Label>
