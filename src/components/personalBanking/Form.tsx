@@ -194,7 +194,7 @@ const PersonalBanking = () =>
       
         return (
             <div className="
-            bg-cover h-screen
+            bg-cover 
             "
             style={{
                 backgroundImage: `url(${pos})`

@@ -18,7 +18,7 @@ export default function RequirementsPage() {
         <CardContent>
           
           <div className="mt-8 flex justify-end">
-            <Button className="px-6 py-2  bg-[#B89B45]  hover:text-red-500"><Link to='/openaccount'>Open Account</Link></Button>
+            <Button className="px-6 py-2  bg-[#B89B45]  hover:text-white"><Link to='/openaccount'>Open Account</Link></Button>
           </div>
           <h3 className=" font-bold mb-4">Registration Requirements</h3>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
@@ -49,7 +49,7 @@ export default function RequirementsPage() {
             <li>References</li>
           </ul>
           <div className="mt-8 flex justify-end">
-          <Button className="px-6 py-2  bg-[#B89B45]  hover:text-red-500"><Link to='/openaccount'>Open Account</Link></Button>
+          <Button className="px-6 py-2  bg-[#B89B45]  hover:text-white"><Link to='/openaccount'>Open Account</Link></Button>
           </div>
         </CardContent>
       </Card>
