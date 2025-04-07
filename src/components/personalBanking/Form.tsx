@@ -202,7 +202,7 @@ const PersonalBanking = () =>
             }}
             >
             <div className="max-w-lg w-full mx-auto p-4 sm:p-6 shadow-lg" >
-                <div className="  justify-items-center"><img src={altpay} alt="" className="h-20"/></div>
+                <div className="  justify-items-center"><img src={altpay} alt="" className="h-20 mb-4"/></div>
       <div className="flex flex-wrap justify-between mb-4 gap-2 text-center sm:text-left">
         {steps.map((step, index) => (
           <div
