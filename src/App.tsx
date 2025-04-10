@@ -7,6 +7,7 @@ import OldAccount from "./components/ExistingAccount"
 import PersonalBanking from "./components/personalBanking/Form"
 import CBankingForm from "./components/coperateAccount/Form"
 import RequirementsPage from "./components/personalBanking/Requirement"
+import RequirementPage from "./components/coperateAccount/Requirements"
 //import MultiStepForm from "./components/coperateAccount/Form"
 
 
@@ -20,8 +21,9 @@ function App() {
       <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/openaccount" element={<PersonalBanking/>}/>
-          <Route path='/cbanking' element={<CBankingForm/>}/>
+          <Route path='/createAccount' element={<CBankingForm/>}/>
           <Route path='account' element={<OldAccount/>}/>
+          <Route path="cbanking" element={<RequirementPage/>}/>
           <Route path="/personalBanking" element={<RequirementsPage/>}/>
       </Routes>
     </HashRouter>

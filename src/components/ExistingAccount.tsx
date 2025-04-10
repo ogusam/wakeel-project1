@@ -220,7 +220,7 @@ export default function OldAccount() {
               </div>
               <div className="flex justify-between mt-4">
                 <Button onClick={handleBack}>Back</Button>
-                <Button onClick={handleNext}>Next</Button>
+                <Button onClick={handleNext} className="bg-[#B89B45]">Next</Button>
               </div>
             </div>
           )}
@@ -260,7 +260,7 @@ export default function OldAccount() {
               </div>
               <div className="flex justify-between mt-4">
                 <Button onClick={handleBack}>Back</Button>
-                <Button disabled={!termsAccepted} className={!termsAccepted ? "opacity-50 cursor-not-allowed" : ""} onClick={() => handleSubmit()}>Submit</Button>
+                <Button disabled={!termsAccepted} className={!termsAccepted ? "opacity-50 cursor-not-allowed" : "bg-[#B89B45]"} onClick={() => handleSubmit()}>Submit</Button>
               </div>
               {submissionMessage && <p className="text-green-500 mt-2">{submissionMessage}</p>}
             </div>

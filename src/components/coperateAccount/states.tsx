@@ -1,27 +1,10 @@
-import { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
-interface Step2FormData {
-  companyName: string;
-  address: string;
-  phone: string;
-  email: string;
-  cac: string;
-  state: string;
-  lga: string;
-}
+const  statesAndLGAs = () => {
+  return (
+    <div>
 
-const CompanyInfo = ({ onValidate }: { onValidate: (valid: boolean) => void }) => {
-
-  const statesAndLGAs: Record<string, string[]> = {
+const  statesAndLGAs: 
     "Abia": [
         "Aba North", "Aba South","Arochukwu","Bende", "Ikwuano", "Isiala-Ngwa North", "Isiala-Ngwa South",
         "Isuikwato", "Obi Nwa","Ohafia","Osisioma","Ngwa", "Ugwunagbo","Ukwa East","Ukwa West","Umuahia North",
@@ -829,108 +812,11 @@ const CompanyInfo = ({ onValidate }: { onValidate: (valid: boolean) => void }) =
         "Tsafe",
         "Zurmi"
     ]
-  }
-
-  const statesInNigeria = Object.keys(statesAndLGAs);
-
-
   
 
-    const [form, setForm] = useState<Step2FormData>(() => {
-    const saved = localStorage.getItem("step2-form");
-    return saved ? JSON.parse(saved) : {
-      companyName: "",
-      address: "",
-      phone: "",
-      email: "",
-      cac: "",
-      state: "",
-      lga: "",
-    };
-  });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof Step2FormData, string>>>({});
-
-
-
-  useEffect(() => {
-    localStorage.setItem("step2-form", JSON.stringify(form));
-
-    const isValid =
-      form.companyName &&
-      form.address &&
-      form.phone &&
-      form.email &&
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
-      form.cac &&
-      form.state &&
-      form.lga;
-    onValidate(!!isValid);
-  }, [form, onValidate]);
-
-  const handleChange = (key: keyof Step2FormData, value: string) => {
-    setForm((prev) => ({ ...prev, [key]: value }));
-    setErrors((prev) => ({
-      ...prev,
-      [key]: key === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-        ? "Invalid email address."
-        : value
-        ? ""
-        : "This field is required.",
-    }));
-  };
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {["companyName", "address", "phone", "email", "cac"].map((field) => (
-        <div key={field}>
-          <label className="block mb-1 capitalize">{field.replace(/([A-Z])/g, " $1")}</label>
-          <Input
-            type="text"
-            value={form[field as keyof Step2FormData]}
-            onChange={(e) => handleChange(field as keyof Step2FormData, e.target.value)}
-          />
-          {errors[field as keyof Step2FormData] && (
-            <p className="text-red-600 text-sm">{errors[field as keyof Step2FormData]}</p>
-          )}
-        </div>
-      ))}
-      <div>
-        <label className="block mb-1">State</label>
-        <Select onValueChange={(val) => handleChange("state", val)}>
-          <SelectTrigger>
-            <SelectValue placeholder="Select State" />
-          </SelectTrigger>
-          <SelectContent>
-            {statesInNigeria.map((state) => (
-              <SelectItem key={state} value={state}>
-                {state}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {errors.state && <p className="text-red-600 text-sm">{errors.state}</p>}
-      </div>
-      <div>
-        <label className="block mb-1">LGA</label>
-        <Select onValueChange={(val) => handleChange("lga", val)}>
-          <SelectTrigger>
-            <SelectValue placeholder="Select LGA" />
-          </SelectTrigger>
-          <SelectContent>
-            {(statesAndLGAs[form.state] || []).map((lga) => (
-              <SelectItem key={lga} value={lga}>
-                {lga}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {errors.lga && <p className="text-red-600 text-sm">{errors.lga}</p>}
-      </div>
     </div>
-  );
+  )
 }
-   
 
-  export default CompanyInfo;
-  
+export default statesAndLGAs
