@@ -69,7 +69,7 @@ const Documents = ({ onValidate }: { onValidate: (valid: boolean) => void }) => 
 
   const handleFileChange = (key: keyof typeof documents, file: File | null) => {
     setDocuments((prev) => ({ ...prev, [key]: file }));
-    if (!file && !["scumlCert", "professionalCert", "cerpac"].includes(key)) {
+    if (!file && !["scumlCert", "professionalCert", "cerpac"].includes('')) {
       setErrors((prev) => ({ ...prev, [key]: "This document is required." }));
     } else {
       setErrors((prev) => ({ ...prev, [key]: "" }));
