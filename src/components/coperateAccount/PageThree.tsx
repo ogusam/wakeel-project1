@@ -2,7 +2,7 @@ import  { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon } from "lucide-react";
+
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 
@@ -167,34 +167,16 @@ const Signatory = ({ onValidate }: { onValidate: (valid: boolean) => void }) => 
             {errors[index]?.phone && <p className="text-red-600 text-sm">{errors[index].phone}</p>}
           </div>
 
-          <div>
-  <label className="block mb-1">Date of Birth</label>
-  <Popover>
-    <PopoverTrigger asChild>
-      <Button
-        variant={"outline"}
-        className={`w-full justify-start text-left font-normal ${
-          !form.dob ? "text-muted-foreground" : ""
-        }`}
-      >
-        <CalendarIcon className="mr-2 h-4 w-4" />
-        {form.dob ? format(form.dob, "PPP") : <span>Select date</span>}
-      </Button>
-    </PopoverTrigger>
-    <PopoverContent className="w-auto p-0" align="start">
-      <Calendar
-        mode="single"
-        selected={form.dob ?? undefined}
-        onSelect={(date) => handleChange(index, "dob", date)}
-        captionLayout="dropdown"
-        fromYear={1900}
-        
-        
-      />
-    </PopoverContent>
-  </Popover>
-  {errors[index]?.dob && <p className="text-red-600 text-sm">{errors[index].dob}</p>}
-</div>
+          <Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">
+      {form.dob ? format(form.dob, "PPP") : "Pick a date"}
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-auto p-0">
+    <Calendar mode="single" selected={form.dob!} onSelect={(date) => handleChange(index, "dob", date)} initialFocus />
+  </PopoverContent>
+</Popover>
 
 
           <div>
